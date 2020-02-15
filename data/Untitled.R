@@ -28,7 +28,17 @@ mutate(timing = ifelse(500 <= Occurred.Time & Occurred.Time < 1200 , "morning", 
                                                                                        "afternoon", "night")))
 crimeData_new <- crimeData_new %>% 
   select(-Occurred.Time, - Crime.Subcategory, -Precinct)
-crimeData_new
 
+crimetype <- crimeData_new %>% 
+  mutate(
+    happened = 1
+  ) %>% 
+  group_by(Primary.Offense.Description) %>% 
+  summarize(
+    sum(happened)
+  )
+
+View(crimetype)
+summary(crimeData_new)
 write.csv(crimeData_new,"Desktop/snitchers/Isan/CrimeData_new.csv", row.names = FALSE)
   
