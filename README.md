@@ -15,5 +15,12 @@ You may also use the 911 Call Data to gain further insights & to improve your ML
 Your task is to answer one or more of the following questions listed below: 
 
 * What formula would you use for a metric to rank the safety of each neighborhood for a student, a family with a young child below the age of 15, and an elderly person? What would be the ranking result when this formula is used for each category of people? 
+
+1. Clean data in Analysis.R;
+2. Assign different weights(scale from 0 to 10) to crime types based on severity they imposed on each category of people;
+3. Create a static evaluation formula: $\sum$ occurances * severity weight;
+4. Import .CSV file to Microsoft SQL server;
+5. Use query to come up with 3 different tables for each category of people containing neighborhood names, evaluated values, and ranking.
+
 * To what extent and accuracy can we predict the level of change in crime for a neighborhood?
 * What unique statistics and patterns were you able to identify in Seattle’s crime? 
